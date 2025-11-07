@@ -1,67 +1,155 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAP Garland, LLC</title>
+  <title>NEWQUEST MNT LLC — Tennis Gear & Equipment USA</title>
+  <meta name="description" content="NEWQUEST MNT LLC • premium tennis racquets, strings, and accessories — Rancho Cucamonga, CA, USA."/>
   <style>
+    :root {
+      --primary: #10b981; /* green court */
+      --accent: #facc15; /* tennis ball */
+      --bg: #0b0f0e;
+      --surface: #121816;
+      --text: #f4fdf9;
+      --muted: #b8cfc2;
+      --ring: 0 8px 30px rgba(16,185,129,0.3);
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-      color: #333;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(800px 500px at -10% -10%, rgba(16,185,129,.3), transparent 60%), var(--bg);
+      color: var(--text);
     }
+    img { max-width: 100%; border-radius: 12px; display: block; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
     header {
-      background-color: #003366;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
+      background: rgba(11,15,14,.7);
+      backdrop-filter: blur(8px);
+      position: sticky; top: 0; z-index: 50;
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+    .topbar { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; }
+    .badge {
+      width: 34px; height: 34px; border-radius: 10px;
+      background: linear-gradient(145deg,#10b981,#065f46);
+      display: grid; place-items: center; box-shadow: var(--ring);
     }
-    h1, h2 {
-      color: #003366;
+    nav { display: flex; gap: 14px; align-items: center; }
+    nav a { color: var(--text); text-decoration: none; font-weight: 600; padding: 8px 10px; border-radius: 8px; }
+    nav a:hover { background: rgba(255,255,255,.08); }
+    .cta { background: var(--accent); color: #111; padding: 8px 14px; border-radius: 10px; font-weight: 800; box-shadow: 0 8px 20px rgba(250,204,21,.3); }
+
+    .hero {
+      display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 24px;
+      padding: 64px 24px; position: relative;
     }
-    .contact {
-      background: #fff;
-      padding: 20px;
-      border-left: 5px solid #003366;
-      margin-top: 30px;
+    .hero h1 { font-size: clamp(28px,5vw,54px); margin-bottom: 10px; }
+    .hero p { color: var(--muted); line-height: 1.6; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(180deg,#10b981,#064e3b);
+      color: #fff; padding: 12px 18px; border-radius: 12px;
+      font-weight: 800; box-shadow: var(--ring);
+      text-decoration: none;
     }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 50px;
+    .btn svg { transition: transform .3s; }
+    .btn:hover svg { transform: translateX(4px); }
+    .chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+    .chip { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.1); padding:6px 12px; border-radius:999px; font-size:.9rem; color:var(--muted); }
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 14px; }
+    .card { background: var(--surface); padding: 18px; border-radius: 12px; border:1px solid rgba(255,255,255,.06); box-shadow:0 8px 24px rgba(0,0,0,.4); }
+    footer { text-align:center; color:#aaa; padding:20px; border-top:1px solid rgba(255,255,255,.08); background:#0c120f; }
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      nav{display:none;}
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>CAP Garland, LLC</h1>
-    <p>Private Investment Fund</p>
-  </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p>CAP Garland, LLC is a Washington-based private investment fund focused on delivering value through diversified investment strategies.</p>
-
-    <h2>Contact</h2>
-    <div class="contact">
-      <p><strong>Address:</strong> 915 W 2nd Ave, Spokane, WA 99201</p>
-      <p><strong>Email:</strong> <a href="mailto:ryanberg@capgarland.shop">ryanberg@capgarland.shop</a></p>
-      <p><strong>Phone:</strong> (509) 822-3850</p>
+<header>
+  <div class="topbar container">
+    <div class="brand">
+      <div class="badge">
+        <svg width="18" height="18" fill="#fff" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <span>NEWQUEST MNT LLC</span>
     </div>
-  </section>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact" class="cta">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <footer>
-    &copy; 2025 CAP Garland, LLC. All rights reserved.
-  </footer>
+<section class="hero container">
+  <div>
+    <h1>Precision Tennis Gear for Every Swing</h1>
+    <p>
+      <strong>NEWQUEST MNT LLC</strong> brings premium tennis racquets, strings, and accessories
+      to players across the United States. Based in Rancho Cucamonga, CA — where performance meets passion.
+    </p>
+    <a href="#contact" class="btn">
+      Contact Us
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 4l1.41 1.41L8.83 10H20v2H8.83l4.58 4.59L12 18l-8-8 8-8z"/></svg>
+    </a>
+    <div class="chips">
+      <span class="chip">Racquets</span>
+      <span class="chip">Strings</span>
+      <span class="chip">Accessories</span>
+    </div>
+  </div>
+  <div>
+    <img src="https://allabouttennis.com/cdn/shop/products/IMG_7305_1024x1024@2x.jpg" alt="Tennis racquets collection">
+  </div>
+</section>
+
+<section id="about" class="container">
+  <div class="card">
+    <h2>About Us</h2>
+    <p>
+      We specialize in professional-grade tennis gear — for both competitive and recreational players.
+      Our curated selection ensures optimal balance, control, and durability on every serve.
+    </p>
+    <p><strong>Address:</strong> HAVEN AVENUE APT 7102, Rancho Cucamonga, CA 91730, United States.</p>
+  </div>
+</section>
+
+<section id="gallery" class="container">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://highpointtennis.com/wp-content/uploads/2020/11/IMG_6697-scaled.jpeg" alt="Tennis court gear display">
+    <img src="https://images.squarespace-cdn.com/content/v1/5b50d1d9266c075ec51689ce/1650312806612-VYVMZ4FGG95RYDYMIP6M/NYC-Racquet-Sports-Tennis-Racquets?format=1000w" alt="Professional tennis racquets wall">
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <div class="card">
+    <h2>Contact</h2>
+    <p>
+      <strong>Email:</strong> <a href="mailto:contact@invexar.shop">contact@invexar.shop</a><br/>
+      <strong>Phone:</strong> <a href="tel:+12247579321">+1 224 757 9321</a>
+    </p>
+    <p>
+      Reach out for product inquiries, bulk orders, or personalized equipment recommendations.
+    </p>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> NEWQUEST MNT LLC — All Rights Reserved
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
